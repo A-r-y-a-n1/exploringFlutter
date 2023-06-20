@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void loadData() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 3));
     final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
     final decodedData = jsonDecode(catalogJson);
@@ -35,16 +35,63 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Catalog App"),
+        title: const Text(
+          "Catalog App",
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.black,
       ),
-      body: ListView.builder(
-        itemCount: CatalogModel.items.length,
-        itemBuilder: (context, index) {
-          return ItemWidget(
-            item: CatalogModel.items[index],
-          );
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+            ? GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20),
+                itemBuilder: (context, index) {
+                  final item = CatalogModel.items[index];
+                  return Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      child: GridTile(
+                        header: Container(
+                          child: Text(
+                            item.name,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          width: 100.0,
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 72, 22, 159),
+                          ),
+                          alignment: Alignment.center,
+                        ),
+                        child: Image.network(
+                          item.image,
+                        ),
+                        footer: Container(
+                          child: Text(
+                            "\$ ${item.price}",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          width: 100.0,
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 72, 22, 159),
+                          ),
+                          alignment: Alignment.bottomRight,
+                        ),
+                      ));
+                },
+                itemCount: CatalogModel.items.length,
+              )
+            : const Center(
+                child: CircularProgressIndicator(
+                color: Colors.white70,
+              )),
       ),
       drawer: MyDrawer(),
     );

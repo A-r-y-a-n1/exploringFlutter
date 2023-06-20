@@ -50,14 +50,6 @@
         },
         {
             "id" : 7,
-            "name" : "Samsung Galaxy S21 Ultra",
-            "desc" : "Samsung Galaxy S21 Ultra 2021 edition",
-            "price" : 1800,
-            "color" : "#1c1c1c",
-            "image" : "https://www.hilaptop.com/userdata/public/gfx/33630.jpg"
-        },
-        {
-            "id" : 8,
             "name" : "Sony Camera",
             "desc" : "Sony Camera 2023 edition",
             "price" : 2654,
