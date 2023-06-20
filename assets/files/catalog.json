@@ -1,0 +1,69 @@
+{
+    "products" : [
+        {
+            "id" : 1,
+            "name" : "iPhone 12 Pro",
+            "desc" : "Apple iPhone 12th generation",
+            "price" : 999,
+            "color" : "#33505a",
+            "image" : "https://ovantica.com/pub/media/catalog/product/cache/359e51c8e354c4e2b5af98e814f93978/1/2/12_pro_max_grap_1_.jpg"
+        },
+        {
+            "id" : 2,
+            "name" : "Pixel 5",
+            "desc" : "Google Pixel Phone 5th generation",
+            "price" : 699,
+            "color" : "#00ac51",
+            "image" : "https://lh3.googleusercontent.com/O5coKJUkLkM-fDagbAlTFRilH1R78iv92_VeivJzwwK2cSr6XlbJhSJD1SlTQMxmNcxW80tGATKr19-Pa6P2FnvRJJSTuOMFEg=rw-e365-nu-w525"
+        },
+        {
+            "id" : 3,
+            "name" : "M1 Macbook Air",
+            "desc" : "Apple Macbook Air with apple silicon",
+            "price" : 1099,
+            "color" : "#e0bfae",
+            "image" : "https://m.media-amazon.com/images/I/71vFKBpKakL._AC_UF1000,1000_QL80_.jpg"
+        },
+        {
+            "id" : 4,
+            "name" : "Playstation 5",
+            "desc" : "Sony Playstation 5th generation",
+            "price" : 1000,
+            "color" : "#544ee4",
+            "image" : "https://res.cloudinary.com/grover/image/upload/f_webp,q_auto/b_white,c_pad,dpr_2.0,h_500,w_520/f_auto,q_auto/v1603965042/isrgkusek1dnrs99yrmj.png"
+        },
+        {
+            "id" : 5,
+            "name" : "Airpods Pro",
+            "desc" : "Apple Airpods Pro !st generation",
+            "price" : 258,
+            "color" : "#e3e4e9",
+            "image" : "https://i.ebayimg.com/thumbs/images/g/yicAAOSwvjZiYJjK/s-l225.jpg"
+        },
+        {
+            "id" : 6,
+            "name" : "iPad Pro",
+            "desc" : "Apple iPad Pro 2020 edition",
+            "price" : 1500,
+            "color" : "#f73984",
+            "image" : "https://i.ebayimg.com/thumbs/images/g/yicAAOSwvjZiYJjK/s-l225.jpg"
+        },
+        {
+            "id" : 7,
+            "name" : "Samsung Galaxy S21 Ultra",
+            "desc" : "Samsung Galaxy S21 Ultra 2021 edition",
+            "price" : 1800,
+            "color" : "#1c1c1c",
+            "image" : "https://www.hilaptop.com/userdata/public/gfx/33630.jpg"
+        },
+        {
+            "id" : 8,
+            "name" : "Sony Camera",
+            "desc" : "Sony Camera 2023 edition",
+            "price" : 2654,
+            "color" : "#7c95eb",
+            "image" : "https://images.unsplash.com/photo-1606986628470-26a67fa4730c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c29ueSUyMGNhbWVyYXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+
+        }
+    ]
+}
