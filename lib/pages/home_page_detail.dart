@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/widgets/home_widgets/catalog_list.dart';
 import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -23,17 +24,7 @@ class HomeDetailPage extends StatelessWidget {
             buttonPadding: EdgeInsets.zero,
             children: [
               "\$ ${catalog.price}".text.bold.xl4.red600.make(),
-              ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      MyTheme.buttonColor,
-                    ),
-                    shape: MaterialStateProperty.all(
-                      StadiumBorder(),
-                    )),
-                child: "Add to cart".text.color(Colors.white).make(),
-              ).wh(120, 50)
+              AddToCart(catalog: catalog).wh(120, 50)
             ],
           ).p32(),
         ),
