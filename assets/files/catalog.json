@@ -35,7 +35,7 @@
         {
             "id" : 5,
             "name" : "Airpods Pro",
-            "desc" : "Apple Airpods Pro !st generation",
+            "desc" : "Apple Airpods Pro 1st generation",
             "price" : 258,
             "color" : "#e3e4e9",
             "image" : "https://i.ebayimg.com/thumbs/images/g/yicAAOSwvjZiYJjK/s-l225.jpg"
@@ -46,7 +46,7 @@
             "desc" : "Apple iPad Pro 2020 edition",
             "price" : 1500,
             "color" : "#f73984",
-            "image" : "https://i.ebayimg.com/thumbs/images/g/yicAAOSwvjZiYJjK/s-l225.jpg"
+            "image" : "https://m.media-amazon.com/images/I/81gC7frRJyL._AC_UF1000,1000_QL80_.jpg"
         },
         {
             "id" : 7,

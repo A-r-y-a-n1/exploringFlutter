@@ -20,7 +20,7 @@ class MyDrawer extends StatelessWidget {
                           end: Alignment.bottomRight,
                           colors: [Colors.blue, Colors.orange, Colors.purple])),
                   child: UserAccountsDrawerHeader(
-                    decoration: BoxDecoration(color: Colors.black),
+                    decoration: BoxDecoration(color: Colors.deepPurple),
                     arrowColor: Colors.white,
                     margin: EdgeInsets.zero,
                     accountName: const Text(

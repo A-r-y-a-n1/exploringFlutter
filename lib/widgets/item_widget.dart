@@ -17,7 +17,7 @@ class ItemWidget extends StatelessWidget {
         color: Colors.black87,
         child: ListTile(
           onTap: () {
-            print("${item.name} pressed");
+          print("${item.name} pressed");
           },
           leading: Image.network(
             item.image,
