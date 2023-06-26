@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_catalog/core/store.dart';
+import 'package:flutter_catalog/models/cart.dart';
 import 'dart:convert';
 import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/utils/routes.dart';
@@ -8,10 +10,9 @@ import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../widgets/home_widgets/catalog_header.dart';
 import '../widgets/home_widgets/catalog_list.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -36,17 +37,29 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return Scaffold(
       backgroundColor: context.cardColor,
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushNamed(context, myRoutes.cartRoute);
-          },
-          backgroundColor: MyTheme.buttonColor,
-          child: Icon(
-            CupertinoIcons.cart,
-            color: Colors.white,
-          )),
+      floatingActionButton: VxBuilder(
+        mutations: const {AddMutation, RemoveMutation},
+        builder: (BuildContext context, store, VxStatus? status) =>
+            FloatingActionButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, myRoutes.cartRoute);
+                },
+                backgroundColor: MyTheme.buttonColor,
+                child: const Icon(
+                  CupertinoIcons.cart,
+                  color: Colors.white,
+                )).badge(
+                color: context.theme.hintColor,
+                size: 20,
+                count: _cart.items.length,
+                textStyle: TextStyle(
+                  color: context.theme.cardColor,
+                  fontWeight: FontWeight.bold,
+                )),
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,
