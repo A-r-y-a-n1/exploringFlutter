@@ -12,10 +12,12 @@ import 'package:provider/provider.dart';
 
 void main() {
   setPathUrlStrategy();
-  runApp(VxState(store: MyStore(), child: MyApp()));
+  runApp(VxState(store: MyStore(), child: const MyApp()));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -33,10 +35,10 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           initialRoute: myRoutes.homeRoute,
           routes: {
-            "/": (context) => LoginPage(),
-            myRoutes.homeRoute: (context) => HomePage(),
-            myRoutes.loginRoute: (context) => LoginPage(),
-            myRoutes.cartRoute: (context) => CartPage(),
+            "/": (context) => const LoginPage(),
+            myRoutes.homeRoute: (context) => const HomePage(),
+            myRoutes.loginRoute: (context) => const LoginPage(),
+            myRoutes.cartRoute: (context) => const CartPage(),
           },
         ),
       ),

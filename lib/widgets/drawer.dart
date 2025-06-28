@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
+  const MyDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final imageUrl =
-        "https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/10/21/Pictures/_7e701072-1375-11eb-9315-b00ef9141a48.jpg";
+    const imageUrl =
+        "https://thumb.ac-illust.com/1a/1af1047d7c4840ff267a1bfedfa05bc4_t.jpeg";
     return Drawer(
         child: ListView(
         padding: const EdgeInsets.all(0.0),
-        children: [
+        children: const [
         Padding(
           padding: EdgeInsets.all(3.0),
           child: DrawerHeader(
@@ -22,16 +24,16 @@ class MyDrawer extends StatelessWidget {
             decoration: BoxDecoration(color: Colors.deepPurple),
             arrowColor: Colors.white,
             margin: EdgeInsets.zero,
-            accountName: const Text(
+            accountName: Text(
               "Aryan Rohela",
               style: TextStyle(fontSize: 14),
             ),
-            accountEmail: const Text(
+            accountEmail: Text(
               "rohelaaryan5@gmail.com",
               style: TextStyle(fontSize: 14),
             ),
             currentAccountPicture: Padding(
-              padding: const EdgeInsets.only(left: 0, bottom: 18),
+              padding: EdgeInsets.only(left: 0, bottom: 18),
               child: CircleAvatar(
                 backgroundColor: Colors.white,
                 backgroundImage: NetworkImage(imageUrl),

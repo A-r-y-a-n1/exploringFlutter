@@ -15,11 +15,14 @@ import '../widgets/home_widgets/catalog_list.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
   void initState() {
     super.initState();
     loadData();
@@ -39,31 +42,35 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final CartModel _cart = (VxState.store as MyStore).cart;
+    final CartModel cart = (VxState.store as MyStore).cart;
     return Consumer(
       builder: (context, ThemeModel themeNotifier, child) => Scaffold(
-        drawer: MyDrawer(),
+        drawer: const MyDrawer(),
         appBar: AppBar(
           actions: <Widget>[
             IconButton(
-                onPressed: () {
-                  themeNotifier.isDark
-                      ? themeNotifier.isdark = false
-                      : themeNotifier.isdark = true;
-                },
-                icon: Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 1.0, 0),
-                  child: Icon(themeNotifier.isDark
-                      ? Icons.wb_sunny_outlined
-                      : Icons.nightlight_outlined),
-                ))
+              onPressed: () {
+                themeNotifier.isDark
+                    ? themeNotifier.isdark = false
+                    : themeNotifier.isdark = true;
+              },
+              icon: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 1.0, 0),
+                child: Icon(themeNotifier.isDark
+                    ? Icons.wb_sunny_outlined
+                    : Icons.nightlight_outlined),
+              ),
+            ),
           ],
-          title: Text("Catalog App"),
-          titleTextStyle: TextStyle(
-              color: context.theme.hintColor,
-              fontSize: 30,
-              letterSpacing: 2.0,
-              fontWeight: FontWeight.bold),
+          title: const Text("Catalog App"),
+          titleTextStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
+                color: themeNotifier.isDark
+                    ? Colors.white
+                    : context.theme.hintColor,
+                fontSize: 24,
+                letterSpacing: 2.0,
+                fontWeight: FontWeight.bold,
+              ),
           iconTheme: IconThemeData(color: context.theme.hintColor),
         ),
         backgroundColor: context.cardColor,
@@ -82,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                   )).badge(
                   color: context.theme.hintColor,
                   size: 20,
-                  count: _cart.items.length,
+                  count: cart.items.length,
                   textStyle: TextStyle(
                     color: context.theme.cardColor,
                     fontWeight: FontWeight.bold,
@@ -97,10 +104,9 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CatalogHeader(),
-                    if (CatalogModel.items != null &&
-                        CatalogModel.items.isNotEmpty)
-                      CatalogList().py16().expand()
+                    const CatalogHeader(),
+                    if (CatalogModel.items.isNotEmpty)
+                      const CatalogList().py16().expand()
                     else
                       CircularProgressIndicator(
                         color: context.theme.hintColor,

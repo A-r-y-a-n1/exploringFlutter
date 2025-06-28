@@ -50,6 +50,7 @@ class HomeDetailPage extends StatelessWidget {
                             .bold
                             .make(),
                         catalog.desc.text.xl
+                            .color(context.theme.hintColor)
                             .textStyle(context.captionStyle)
                             .make(),
                         10.heightBox,

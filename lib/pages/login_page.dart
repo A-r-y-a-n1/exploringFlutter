@@ -4,6 +4,8 @@ import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }

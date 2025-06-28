@@ -8,7 +8,7 @@ import '../themes.dart';
 
 class AddToCart extends StatelessWidget {
   final Item catalog;
-  AddToCart({
+  const AddToCart({
     super.key,
     required this.catalog,
   });
@@ -16,8 +16,8 @@ class AddToCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     VxState.watch(context, on: [AddMutation, RemoveMutation]);
-    final CartModel _cart = (VxState.store as MyStore).cart;
-    bool IsInCart = _cart.items.contains(catalog) ?? false;
+    final CartModel cart = (VxState.store as MyStore).cart;
+    bool IsInCart = cart.items.contains(catalog) ?? false;
     return ElevatedButton(
       onPressed: () {
         if (!IsInCart) {
@@ -29,10 +29,10 @@ class AddToCart extends StatelessWidget {
             MyTheme.buttonColor,
           ),
           shape: MaterialStateProperty.all(
-            StadiumBorder(),
+            const StadiumBorder(),
           )),
       child: IsInCart
-          ? Icon(Icons.done)
+          ? const Icon(Icons.done)
           : const Icon(CupertinoIcons.cart_badge_plus),
     );
   }
